@@ -1,0 +1,15 @@
+<!-- CK/views/comic_info.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= comic.title %></title>
+</head>
+<body>
+    <h1><%= comic.title %></h1>
+    <p><%= comic.description %></p>
+    <img src="<%= comic.image %>" alt="<%= comic.title %>" style="width: 300px;">
+    <p>Views: <%= comic.views %></p>
+    <a href="/list_comics">Back to List</a>
+</body>
+</html>

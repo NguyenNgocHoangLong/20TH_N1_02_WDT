@@ -1,0 +1,41 @@
+<!-- views/list_comics.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Comics</title>
+    <style>
+        .comics-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .comic {
+            flex: 0 0 23%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .comic img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>List of Comics</h1>
+    <div class="comics-container">
+        <% comics.forEach(function(comic) { %>
+            <div class="comic">
+                <img src="<%= comic.image %>" alt="<%= comic.title %>" style="width: 100px;">
+                <h2><%= comic.title %></h2>
+                <p>Views: <%= comic.views %></p>
+                <form action="/comics/<%= comic._id %>" method="get">
+                    <button type="submit">Details</button>
+                </form>
+            </div>
+        <% }); %>
+    </div>
+</body>
+</html>

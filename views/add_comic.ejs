@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Comic</title>
+</head>
+<body>
+    <h1>Add New Comic</h1>
+    <% if (typeof query !== 'undefined' && query.inserted === 'true') { %>
+        <p>Comic has been added successfully!</p>
+    <% } %>
+    <form action="/add_comic" method="post">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required><br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea><br>
+
+        <label for="image">Image URL:</label>
+        <input type="text" id="image" name="image" required><br>
+
+        <label for="views">Views:</label>
+        <input type="number" id="views" name="views" required><br>
+
+        <button type="submit">Add Comic</button>
+    </form>
+</body>
+</html>
