@@ -3,13 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>List of Genres</title>
+    <style>
+        .genres-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .genre {
+            flex: 0 0 23%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <h1>List of Genres</h1>
+    <a href="/login">LogOut</a>
     <ul>
+        <div class="genres-container">
         <% genres.forEach(function(genre) { %>
+            <div class="genre">
             <li><%= genre.name %></li>
+            </div>
         <% }); %>
+        </div>
     </ul>
+    <a href="/list_comic">Back to List</a>
 </body>
 </html>

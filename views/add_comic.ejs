@@ -5,6 +5,7 @@
     <title>Add Comic</title>
 </head>
 <body>
+    <a href="/login">LogOut</a>
     <h1>Add New Comic</h1>
     <% if (typeof query !== 'undefined' && query.inserted === 'true') { %>
         <p>Comic has been added successfully!</p>
@@ -23,6 +24,7 @@
         <input type="number" id="views" name="views" required><br>
 
         <button type="submit">Add Comic</button>
+        <a href="/list_comic">Back to List</a>
     </form>
 </body>
 </html>

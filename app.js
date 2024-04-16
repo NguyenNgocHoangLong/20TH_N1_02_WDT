@@ -15,17 +15,10 @@ app.use(comicRoutes);
 app.use(genreRoutes);
 // Add a new route for the root URL
 app.get('/', (req, res) => {
-    // Redirect to the add comic page
-    //res.redirect('/add_comic');
-    res.redirect('/list_comic');
-    //res.redirect('/list_genre');
-    //res.send('Welcome to the Comic Book Store! <a href="/list_comic">View Comics</a>');
-    //res.send('Welcome to the Comic Book Store! <a href="/comics">Xem Truyện Tranh</a>');
-    // Or just render a simple welcome message
-    //res.send('Welcome to the Comic Book Store!');
-    
+    res.redirect('/login');
 });
-app.use(express.static('CK/images'));
+const path = require('path');
+app.use('/images', express.static(path.join(__dirname, 'CK/images')));
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });

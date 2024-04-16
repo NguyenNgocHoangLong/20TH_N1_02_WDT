@@ -42,8 +42,7 @@ router.post('/login', async (req, res) => {
         if (!isMatch) {
             return res.status(400).send('Invalid credentials');
         }
-        //res.send('Logged in successfully <a href="/list_comic">View Comics</a>');
-        res.redirect('/list_comic');
+        res.send('Logged in successfully <a href="/list_comic">View Comics</a>');
     } catch (err) {
         res.status(500).json({ message: err.message });
     }

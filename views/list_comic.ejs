@@ -1,4 +1,4 @@
-<!-- views/list_comics.ejs -->
+<!-- CK/views/list_comic.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,13 +25,17 @@
 </head>
 <body>
     <h1>List of Comics</h1>
+    <a href="/list_genre">Genre</a>
+    <a href="/add_comic">Add</a>
+    <a href="/login">LogOut</a>
     <div class="comics-container">
         <% comics.forEach(function(comic) { %>
             <div class="comic">
-                <img src="<%= comic.image %>" alt="<%= comic.title %>" style="width: 100px;">
+                <img src="/images/<%= comic.cover_image_url %>" alt="<%= comic.title %>" style="width: 100px;">
                 <h2><%= comic.title %></h2>
                 <p>Views: <%= comic.views %></p>
-                <form action="/comics/<%= comic._id %>" method="get">
+                <!-- Use a button instead of a link -->
+                <form action="/list_comic/<%= comic._id %>" method="get">
                     <button type="submit">Details</button>
                 </form>
             </div>
