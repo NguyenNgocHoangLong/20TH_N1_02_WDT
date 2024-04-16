@@ -1,15 +1,12 @@
-// CK/routes/auth.js
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 
-// Route to show registration page
 router.get('/register', (req, res) => {
     res.render('register');
 });
 
-// Route to handle user registration
 router.post('/register', async (req, res) => {
     try {
         const { username, email, password } = req.body;
@@ -24,12 +21,10 @@ router.post('/register', async (req, res) => {
     }
 });
 
-// Route to show login page
 router.get('/login', (req, res) => {
     res.render('login');
 });
 
-// Route to handle user login
 router.post('/login', async (req, res) => {
     try {
         const { username, password } = req.body;

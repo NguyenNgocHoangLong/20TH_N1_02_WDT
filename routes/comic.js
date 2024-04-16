@@ -3,13 +3,10 @@ const router = express.Router();
 const Comic = require('../models/Comic');
 const Comment = require('../models/Comment');
 
-
-// Display form for adding comic
 router.get('/add_comic', (req, res) => {
     res.render('add_comic');
 });
 
-// CK/routes/comic.js
 router.get('/list_comic/:id', async (req, res) => {
     try {
         const comic = await Comic.findById(req.params.id);
@@ -26,7 +23,7 @@ router.get('/list_comic/:id', async (req, res) => {
 
 
 
-// Handle comic addition
+
 router.post('/add_comic', (req, res) => {
     const { title, description, image, views } = req.body;
     const newComic = new Comic({ title, description, image, views });
@@ -36,11 +33,11 @@ router.post('/add_comic', (req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-// List comics
+
 router.get('/list_comic', (req, res) => {
     Comic.find()
         .then(comics => {
-            console.log(comics); // Add this line to see what is being passed to the view
+            console.log(comics);
             res.render('list_comic', { comics });
         })
         .catch(err => res.status(400).json('Error: ' + err));
@@ -70,7 +67,7 @@ router.post('/add_comment', async (req, res) => {
         const { comicId, text } = req.body;
         const newComment = new Comment({ comicId, text });
         await newComment.save();
-        res.redirect('/list_comic/' + comicId); // Quay lại trang của truyện đó
+        res.redirect('/list_comic/' + comicId);
     } catch (err) {
         console.error('Error adding comment:', err);
         res.status(500).send('Error: ' + err);

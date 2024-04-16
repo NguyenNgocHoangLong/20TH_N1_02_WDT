@@ -6,14 +6,13 @@ const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
-// Import routes
 const comicRoutes = require('./routes/comic');
 const genreRoutes = require('./routes/genre');
 const authRoutes = require('./routes/auth');
 app.use(authRoutes);
 app.use(comicRoutes);
 app.use(genreRoutes);
-// Add a new route for the root URL
+
 app.get('/', (req, res) => {
     res.redirect('/login');
 });

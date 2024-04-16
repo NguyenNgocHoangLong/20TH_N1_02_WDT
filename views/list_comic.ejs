@@ -1,4 +1,3 @@
-<!-- CK/views/list_comic.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +33,6 @@
                 <img src="/images/<%= comic.cover_image_url %>" alt="<%= comic.title %>" style="width: 100px;">
                 <h2><%= comic.title %></h2>
                 <p>Views: <%= comic.views %></p>
-                <!-- Use a button instead of a link -->
                 <form action="/list_comic/<%= comic._id %>" method="get">
                     <button type="submit">Details</button>
                 </form>
