@@ -30,7 +30,7 @@
     <div class="comics-container">
         <% comics.forEach(function(comic) { %>
             <div class="comic">
-                <img src="/images/<%= comic.cover_image_url %>" alt="<%= comic.title %>" style="width: 100px;">
+                <img src="<%= comic.cover_image_url %>" alt="<%= comic.title %> Cover" style="width:100px;height:auto;">
                 <h2><%= comic.title %></h2>
                 <p>Views: <%= comic.views %></p>
                 <form action="/list_comic/<%= comic._id %>" method="get">
