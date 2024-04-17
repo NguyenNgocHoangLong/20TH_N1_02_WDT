@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter</title>
+</head>
+<body>
+    <h1>Chapter Images for <%= title %></h1>
+    <div>
+        <% images.forEach(function(image) { %>
+            <img src="<%= image %>" style="max-width: 100%;">
+        <% }); %>
+    </div>
+</body>
+</html>
