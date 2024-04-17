@@ -9,7 +9,7 @@
     <a href="/login">LogOut</a>
     <h1><%= comic.title %></h1>
     <p><%= comic.description %></p>
-    <img src="<%= comic.image %>" alt="<%= comic.title %>" style="width: 300px;">
+    <img src="<%= comic.cover_image_url %>" alt="<%= comic.title %> Cover" style="width:100px;height:auto;">
     <p>Views: <%= comic.views %></p>
     <a href="/comic/<%= comic._id %>/chapter/1"><button>Chap 1</button></a>
     <a href="/list_comic">Back to List</a>
